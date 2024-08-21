@@ -26,7 +26,7 @@ public class Weapon {
 	private String weaponDesigner;
 	private String weaponOrigin;
 	private Integer weaponFirstYearMade;
-	private Long weaponNumberMade;
+	private String serialNumber;
 	
 @EqualsAndHashCode.Exclude
 @ToString.Exclude
@@ -36,8 +36,8 @@ public class Weapon {
 	
 @EqualsAndHashCode.Exclude
 @ToString.Exclude
-@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-	Set<MilitaryWeapon> militaryWeapons;
+@OneToMany(mappedBy = "weapon", cascade = CascadeType.ALL, orphanRemoval = true)
+	Set<Owner> owners;
 }// CLASS
 
 //ViRo: Table is as follows, using the Barrett 82 as an example:
@@ -68,9 +68,8 @@ public class Weapon {
 //		} Many to Many with Manufacturer 
 //			Many manufacturers make many weapons and many weapons are made by many manufactures.
 //
-//		} One to Many with Military Weapon
-//			Weapons are 'adopted' by military groups and tend to get given new names or designations. They're 
-//			all the same at the end of the day.
+//		} One to Many with owners
+//			This is a fantasy world where a person may only own one gun. We call it Ouhtatexaas.
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
