@@ -15,11 +15,11 @@ import lombok.ToString;
 public class MilitaryWeapon {
 
 @Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long milWeaponId;
-	private String milWeaponName;
-	private Integer milWeaponYearAdopted;
-	private Integer milWeaponYearRetired;
+@GeneratedValue(strategy = GenerationType.IDENTITY) // << Added as a temp fix to make this all work, Ideally 
+	private Long milWeaponId;						// this becomes a join table between Millitary and Weapon,
+	private String milWeaponName;					// but I'm not quite sure how to make that happen. Failing
+	private Integer milWeaponYearAdopted;			// to make it work we'll just make it a regular join
+	private Integer milWeaponYearRetired;			// table with no data added to it.
 	private Long milWeaponNumberPurchased;
 
 @EqualsAndHashCode.Exclude
@@ -34,7 +34,7 @@ public class MilitaryWeapon {
 
 }// CLASS
 
-// ViRo:
+// ViRo: Table is as follows, using the Barrett 82 as an example:
 //
 //		>Weapon ID: Y
 //			The ID number of the weapon being used by the associated military. This should be taken from 

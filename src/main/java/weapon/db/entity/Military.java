@@ -25,7 +25,7 @@ public class Military {
 	
 }// CLASS
 
-//ViRo:
+//ViRo: Table is as follows, using the Barrett 82 as an example:
 //
 //		>Military ID: Z
 //			This is automatically generated and is used for identification and index purposes only.

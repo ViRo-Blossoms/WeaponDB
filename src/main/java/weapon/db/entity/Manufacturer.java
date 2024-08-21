@@ -28,15 +28,10 @@ public class Manufacturer {
 	private Set<Weapon> weapons = new HashSet<>();
 }// CLASS
 
-
-// ViRo: 
+// ViRo: Table is as follows, using the Barrett 82 as an example:
 //
 //		>Manufacturer ID: X
 //			This is automatically generated and is used for identification and index purposes only.
-//
-//		>Weapon ID: Y
-//			The ID number of the weapon being manufactured. This should be taken from the weapon once it is
-//			placed in the database to avoid headaches.
 //
 //		>Manufacturer Name: Barrett Firearms Manufacturing
 //			Name of the manufacturer.
