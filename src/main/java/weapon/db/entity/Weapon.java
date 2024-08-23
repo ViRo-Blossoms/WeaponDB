@@ -26,7 +26,6 @@ public class Weapon {
 	private String weaponDesigner;
 	private String weaponOrigin;
 	private Integer weaponFirstYearMade;
-	private String serialNumber;
 	
 @EqualsAndHashCode.Exclude
 @ToString.Exclude
@@ -37,7 +36,7 @@ public class Weapon {
 @EqualsAndHashCode.Exclude
 @ToString.Exclude
 @OneToMany(mappedBy = "weapon", cascade = CascadeType.ALL, orphanRemoval = true)
-	Set<Owner> owners;
+	Set<RegisteredWeapon> registeredWeapons;
 }// CLASS
 
 //ViRo: Table is as follows, using the Barrett 82 as an example:
