@@ -20,7 +20,7 @@ public class Manufacturer {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long manufacturerId;
-	private Long manufacturerName;
+	private String manufacturerName;
 	
 @EqualsAndHashCode.Exclude
 @ToString.Exclude

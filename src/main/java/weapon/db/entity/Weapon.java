@@ -1,5 +1,6 @@
 package weapon.db.entity;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import jakarta.persistence.CascadeType;
@@ -31,12 +32,12 @@ public class Weapon {
 @ToString.Exclude
 @ManyToMany(cascade = CascadeType.ALL)
 @JoinTable(name = "weapon_manufacturer", joinColumns = @JoinColumn(name = "weapon_id"), inverseJoinColumns = @JoinColumn(name = "manufacturer_id"))
-	Set<Manufacturer> manufacturers;
+	Set<Manufacturer> manufacturers = new HashSet<>();
 	
 @EqualsAndHashCode.Exclude
 @ToString.Exclude
 @OneToMany(mappedBy = "weapon", cascade = CascadeType.ALL, orphanRemoval = true)
-	Set<RegisteredWeapon> registeredWeapons;
+	Set<RegisteredWeapon> registeredWeapons = new HashSet<>();
 }// CLASS
 
 //ViRo: Table is as follows, using the Barrett 82 as an example:
@@ -67,8 +68,9 @@ public class Weapon {
 //		} Many to Many with Manufacturer 
 //			Many manufacturers make many weapons and many weapons are made by many manufactures.
 //
-//		} One to Many with owners
-//			This is a fantasy world where a person may only own one gun. We call it Ouhtatexaas.
+//		} One to Many with Registered Weapon
+//			Weapons are usually registered with a serial number, making them unique from another weapon even
+//			if they are they same make and model
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
